@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hud</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/db37c02929.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="hud-statistics">
+      <div class="box-health">
+        <div id="health-border"></div>
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <div class="box-food">
+        <div id="food-border"></div>
+        <i class="fa-solid fa-utensils"></i>
+      </div>
+      <div class="box-drink">
+        <div id="drink-border"></div>
+        <i class="fa-solid fa-whiskey-glass"></i>
+      </div>
+      <div class="box-armor">
+        <div id="armor-border"></div>
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div class="box-mic">
+        <div id="mic-border"></div>
+        <i class="fa-solid fa-microphone"></i>
+      </div>
+    </section>
+    <section class="car-statistics">
+      <div class="box-speed">
+        <span id="speed">000</span>
+        <div id="runs">2</div>
+      </div>
+      <div class="progress-bg">
+        <div id="progress-fill"></div>
+      </div>
+      <div class="car-info">
+        <div id="fuel">
+          <div id="fuel-border"></div>
+          <i class="fa-solid fa-gas-pump"></i>
+        </div>
+
+        <div id="repair">
+          <div id="repair-border"></div>
+          <i class="fa-solid fa-wrench"></i>
+        </div>
+        <div id="light-id">
+          <i class="fa-solid fa-lightbulb" id="light"></i>
+        </div>
+      </div>
+    </section>
+    <script src="/html/script.js"></script>
+  </body>
+</html>

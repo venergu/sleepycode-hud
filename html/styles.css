@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/digital-numbers');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hud-statistics {
+    position: fixed;
+    bottom: 0.26vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+}
+
+.box-health,
+.box-food,
+.box-drink,
+.box-armor,
+.box-mic {
+    position: relative;
+    width: 2.604vw;
+    height: 2.604vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.26vw;
+    border-radius: 4px;
+    box-shadow: inset 0vw 2px 2px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.box-health {
+    background: rgba(189, 16, 16, 0.48);
+}
+
+#health-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+    border-bottom: 2px solid red;
+    bottom: 0;
+    transition: height 0.3s ease-in-out;
+}
+
+.box-food {
+    background: rgba(113, 209, 94, 0.77);
+}
+
+#food-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #00FF91;
+    border-right: 2px solid #00FF91;
+    border-bottom: 2px solid #00FF91;
+    transition: height 0.3s ease-in-out;
+    bottom: 0;
+}
+
+.box-drink {
+    background: rgba(45, 160, 255, 0.62);
+}
+
+#drink-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #2DA0FF;
+    border-right: 2px solid #2DA0FF;
+    border-bottom: 2px solid #2DA0FF;
+    transition: height 0.3s ease-in-out;
+    bottom: 0;
+}
+
+.box-armor {
+    background: rgba(176, 176, 176, 0.62);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+#armor-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #B0B0B0;
+    border-right: 2px solid #B0B0B0;
+    border-bottom: 2px solid #B0B0B0;
+    transition: height 0.3s ease-in-out;
+    bottom: 0;
+}
+
+.box-armor.close {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+.box-mic {
+    background: rgba(89, 83, 255, 0.48);
+    transition: opacity 0.5s ease-in-out;
+}
+
+#mic-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid #5953FF;
+    border-right: 2px solid #5953FF;
+    border-bottom: 2px solid #5953FF;
+    transition: height 0.3s ease-in-out;
+    bottom: 0;
+}
+
+.box-health i,
+.box-food i,
+.box-drink i,
+.box-armor i,
+.box-mic i {
+    font-size: 18px;
+    color: white;
+}
+
+.car-statistics {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-out forwards;
+    display: none;
+}
+
+.car-statistics.close {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+.box-speed {
+    position: absolute;
+    width: auto;
+    height: 4.323vw;
+    right: 4.167vw;
+    bottom: 5.208vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.box-speed #speed {
+    font-family: 'Digital Numbers';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    color: #ffffff;
+}
+
+#runs {
+    width: 1.719vw;
+    height: 1.719vw;
+    background: rgba(0, 78, 151, 0.55);
+    border: 0.156vw solid #004E97;
+    border-radius: 50%;
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+.progress-bg {
+    width: 7.604vw;
+    height: 0.365vw;
+    background: rgba(0, 0, 0, 0.49);
+    position: absolute;
+    right: 5.729vw;
+    bottom: 4.688vw;
+    border-radius: 2px;
+}
+
+#progress-fill {
+    width: 0%;
+    height: 0.365vw;
+    background: #ff0000;
+    border-radius: 2px;
+    transition: width 0.1s ease-in-out;
+    max-width: 100%;
+}
+
+.car-info {
+    position: absolute;
+    width: 8.438vw;
+    height: 2.344vw;
+    right: 4.948vw;
+    bottom: 1.823vw;
+    background: rgba(19, 18, 20, 0.86);
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#fuel,
+#repair {
+    position: relative;
+    width: 2.344vw;
+    height: 2.344vw;
+    background: rgba(217, 217, 217, 0.09);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#fuel-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid red;
+    border-right: 2px solid red;
+    border-bottom: 2px solid red;
+    bottom: 0;
+    transition: height 0.3s ease-in-out;
+}
+
+#repair-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid rgba(43, 168, 95, 0.815);
+    border-right: 2px solid rgba(43, 168, 95, 0.815);
+    border-bottom: 2px solid rgba(43, 168, 95, 0.815);
+    transition: height 0.3s ease-in-out;
+    bottom: 0;
+}
+
+#fuel i,
+#repair i,
+#light-id i {
+    color: white;
+    font-size: 24px;
+}
+
+#light-id {
+    width: 2.344vw;
+    height: 2.344vw;
+    background: rgba(217, 217, 217, 0.09);
+    border-left: 2px solid #0084FF;
+    border-right: 2px solid #0084FF;
+    border-bottom: 2px solid #0084FF;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
